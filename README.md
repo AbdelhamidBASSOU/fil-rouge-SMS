@@ -14,6 +14,8 @@ Description de l'Application : SMS est une application de gestion de stock qui p
 - Autant qu'utilisateurs je peux gérer les commandes.
 - Autant qu'administrateu et qu'utilisateur je peux savoir la date d'arrivage avec les details (Quantité de produits,Catégories).
 - Autant qu'administrateur je peux gérer l'ensemble du lapplication.
+- Autant qu'adminastrateur je peux savoir toutes actions en relation avec  le fournisseur.
+- Autant qu'adminastrateur je peux avoir une notification avant l'épuisement d'un produit dans le stock. 
 
 ## L’administrateur peut gérer l’ensemble du site Web :
 
@@ -21,12 +23,9 @@ Description de l'Application : SMS est une application de gestion de stock qui p
 - Créer un rapport.
 - Gérer les commandes.
 - Chercher les produits à travers une barre de recherche.
-
-## Bonus:
-
 - Search Product by bar code
 
-## logiciels nécessaires
+## logiciels nécessaires : 
 
 | Number |   Description    |                               Type |
 | ------ | :--------------: | ---------------------------------: |
