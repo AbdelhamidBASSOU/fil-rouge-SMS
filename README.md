@@ -1,30 +1,37 @@
 #SMS
 Nom du site : SMS :Stock managment system
-Description du Application : SMS est une application de gestion de stock qui permet de gérer le stock et d'avoir une vison globale sur ce dernier .
-##Contenus et navigation : 
-* Autant  qu'utilisateurs je peux accéder au dashboard.
-* Autant  qu'utilisateurs je peux me connecter.
-* Autant qu'utilisateurs je peux commander un produit précis.
-* Autant qu'utilisateurs je peux voir toutes les informations sur une entreprise :
-- Voir les brands
-  -Voir les produits disposés
-  - Voir les Catégories
-  - Log-in et log-out
-* Autant qu'utilisateurs je peux voir la liste des produits .
-* le feedback des clients sur les produits.
+Description de l'Application : SMS est une application de gestion de stock qui permet de gérer le stock et d'avoir une vison globale sur ce dernier .
+
+## Contenus et navigation :
+
+- Autant qu'utilisateurs je peux me connecter ,accéder au dashboard et se déconnecter de l'application.
+- Autant qu'utilisateurs je peux accéder à la page brands et effectuer des actions:
+  -Ajouter
+  -Suprimer
+  -Modifier
+- Autant qu'utilisateurs je peux accéder à la page Categories et effectuer des actions(CRUD).
+- Autant qu'utilisateurs je peux accéder à la page Produits et effectuer des actions(CRUD).
+- Autant qu'utilisateurs je peux gérer les commandes.
+- Autant qu'administrateu et qu'utilisateur je peux savoir la date d'arrivage avec les details (Quantité de produits,Catégories).
+- Autant qu'administrateur je peux gérer l'ensemble du lapplication.
+
 ## L’administrateur peut gérer l’ensemble du site Web :
-* Gérer la section complète  Comme : ---ajouter/supprimer/modifier les produis.
-* Gérer la section complète de stock. 
-* Gérer les commandes reçues
-* Chercher les produits à travers une barre de recherche.
-## logiciels nécessaires
+
+- Gérer la section complète Comme : ---ajouter/supprimer/modifier les produis.
+- Créer un rapport.
+- Gérer les commandes.
+- Chercher les produits à travers une barre de recherche.
+
 ## Bonus:
-* Search by code bar
-| Number    | Description |    Type | 
-|----------|:-------------:|------:|
-| 1    | Operating System    | Mac / Linux / Windows | 
-| 2 | Frontend | HTML 5 / CSS 3 / JS | 
-| 3    | Backend |    PHP 8 / MYSQL | 
-| 4    | IDE | Visual Code | 
-| 5    | Browser | Google Chrome / Mozilla developper | 
-## Exemple(s) de site(s) apprécié(s) 
+
+- Search Product by bar code
+
+## logiciels nécessaires
+
+| Number |   Description    |                               Type |
+| ------ | :--------------: | ---------------------------------: |
+| 1      | Operating System |              Mac / Linux / Windows |
+| 2      |     Frontend     |                HTML 5 / CSS 3 / JS |
+| 3      |     Backend      |                      PHP 8 / MYSQL |
+| 4      |       IDE        |                        Visual Code |
+| 5      |     Browser      | Google Chrome / Mozilla developper |
