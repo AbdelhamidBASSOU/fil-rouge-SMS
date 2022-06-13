@@ -1,3 +1,6 @@
+<?php
+
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -6,11 +9,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title><?php echo  $data['title'] ?></title>
+        <title><?php $data['title'] ?></title>
         <link href="<?php echo URLROOT ?>/css/style.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
-    <body class=""style="background-image: url('../src/assets/img/gestion-de-stock.1.15.jpg');">
+    <body class=""style="background-image: url('<?php echo URLROOT ?>/img/gestion-de-stock.1.15.jpg');">
         <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
                 <main>
@@ -71,7 +74,7 @@
                                         </form>
                                     </div>
                                     <div class="card-footer text-center py-3">
-                                        <div class="small"><a href="login.html">Have an account? Go to login</a></div>
+                                        <div class="small"><a href="<?php echo URLROOT ?>/index">Have an account? Go to login</a></div>
                                     </div>
                                 </div>
                             </div>

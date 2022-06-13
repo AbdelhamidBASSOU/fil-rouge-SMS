@@ -85,6 +85,7 @@ class Users
         $result = $this->db->resultSet();
         return $result;
     }
+
     public function getUsers()
     {
         $result = $this->db->query('SELECT * FROM users');
@@ -147,4 +148,32 @@ public function deleteBrands    ($id){
     $result = $this->db->execute();
     return $result;
 }
+public function addCategory($data){
+    $result = $this->db->query('INSERT INTO category (idCategory,Name,Description) VALUES (:idCategory,:Name,:Description)');
+    $result = $this->db->bind(':idCategory', $data['idCategory']);
+    $result = $this->db->bind(':Name', $data['Name']);
+    $result = $this->db->bind(':Description', $data['Description']);
+    $result = $this->db->execute();
+    return $result;
 }
+public function updateCategory($data){
+    $result = $this->db->query('UPDATE category SET idCategory=:idCategory,Name=:Name,Description=:Description WHERE idCategory=:idCategory');
+    $result = $this->db->bind(':idCategory', $data['idCategory']);
+    $result = $this->db->bind(':Name', $data['Name']);
+    $result = $this->db->bind(':Description', $data['Description']);
+    $result = $this->db->execute();
+    return $result;
+}
+public function getCategoryById($id){
+    $result = $this->db->query('SELECT * FROM category WHERE idCategory=:id');
+    $result = $this->db->bind(':id', $id);
+    $result = $this->db->execute();
+    $result = $this->db->single();
+    return $result;
+}
+public function deleteCategory($id){
+    $result = $this->db->query('DELETE FROM category WHERE idCategory=:id');
+    $result = $this->db->bind(':id', $id);
+    $result = $this->db->execute();
+    return $result;
+}}

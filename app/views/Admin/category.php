@@ -117,7 +117,7 @@
                         </ol>
                         <div class="d-flex align-items-center">
                         <i class="far fa-sort text-info far fs-6 fa-sort me-3  d-sm-block"></i>
-                        <a href="?add" type="button" class="btn  bg-info text-white my-3" data-bs-toggle="modal" data-bs-target="#modalAddCours">ADD Product</a>
+                        <a href="<?php echo URLROOT ?>/Admin/addCategory" type="button" class="btn  bg-info text-white my-3">ADD Category</a>
                     </div>
                         
                         <div class="card mb-4">
@@ -135,109 +135,23 @@
                                             <th>Actions</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>idCategory</th>
-                                            <th>Name</th>
-                                            <th>Description</th>
-                                            <th>Actions</th>
-                                        </tr>
-                                    </tfoot>
                                     <tbody>
-                                        <tr>
-                                            <td>12333411</td>
-                                            <td>Sneakers</td>
-                                            <td>Sneakers are most saled categories of all time</td>
+                                        <?php foreach($data['Categories'] as $category)  :?>
+                           <tr>
+                                            <td><?php echo $category->idCategory; ?></td>
+                                            <td><?php echo $category->Name; ?></td>
+                                            <td><?php echo $category->Description; ?></td>
                                             <td>
-                                                <a href="" class="btn btn-primary btn-sm">
-                                                    <i class="fa-solid fa-trash-can"></i>
-                                                </a>
-                                                <a href="#" class="btn btn-danger btn-sm">
-                                                    <i class="fas fa-trash"></i>
-                                                </a>
-                                        </td>
-                                            
-                                        </tr>
-                                        <tr>
-                                            <td>12333411</td>
-                                            <td>Sneakers</td>
-                                            <td>Sneakers are most saled categories of all time</td>
-                                            <td>
-                                                <a href="" class="btn btn-primary btn-sm">
-                                                    <i class="fa-solid fa-trash-can"></i>
-                                                </a>
-                                                <a href="#" class="btn btn-danger btn-sm">
-                                                    <i class="fas fa-trash"></i>
-                                                </a>
-                                        </td>
-                                        </tr>
-                                        <tr>
-                                            <td>12333411</td>
-                                            <td>Sneakers</td>
-                                            <td>Sneakers are most saled categories of all time</td>
-                                            <td>
-                                                <a href="" class="btn btn-primary btn-sm">
-                                                    <i class="fa-solid fa-trash-can"></i>
-                                                </a>
-                                                <a href="#" class="btn btn-danger btn-sm">
-                                                    <i class="fas fa-trash"></i>
-                                                </a>
-                                        </td>
-                                        </tr>
-                                        <tr>
-                                            <td>12333411</td>
-                                            <td>Sneakers</td>
-                                            <td>Sneakers are most saled categories of all time</td>
-                                            <td>
-                                                <a href="" class="btn btn-primary btn-sm">
-                                                    <i class="fa-solid fa-trash-can"></i>
-                                                </a>
-                                                <a href="#" class="btn btn-danger btn-sm">
-                                                    <i class="fas fa-trash"></i>
-                                                </a>
-                                        </td>
-                                        </tr>
-                                          <tr>
-                                            <td>12333411</td>
-                                            <td>Sneakers</td>
-                                            <td>Sneakers are most saled categories of all time</td>
-                                            <td>
-                                                <a href="" class="btn btn-primary btn-sm">
-                                                    <i class="fa-solid fa-trash-can"></i>
-                                                </a>
-                                                <a href="#" class="btn btn-danger btn-sm">
-                                                    <i class="fas fa-trash"></i>
-                                                </a>
-                                        </td>
-                                        </tr>
-                                        <tr>
-                                            <td>12333411</td>
-                                            <td>Sneakers</td>
-                                            <td>Sneakers are most saled categories of all time</td>
-                                            <td>
-                                                <a href="" class="btn btn-primary btn-sm">
-                                                    <i class="fa-solid fa-trash-can"></i>
-                                                </a>
-                                                <a href="#" class="btn btn-danger btn-sm">
-                                                    <i class="fas fa-trash"></i>
-                                                </a>
-                                        </td>
-                                        </tr>
-                                        <tr>
-                                            <td>12333411</td>
-                                            <td>Sneakers</td>
-                                            <td>Sneakers are most saled categories of all time</td>
-                                            <td>
-                                                <a href="" class="btn btn-primary btn-sm">
-                                                    <i class="fa-solid fa-trash-can"></i>
-                                                </a>
-                                                <a href="#" class="btn btn-danger btn-sm">
-                                                    <i class="fas fa-trash"></i>
-                                                </a>
-                                        </td>
-                                        </tr>
+                                                <a href="<?php echo URLROOT ?>/Admin/updateCategory/<?php echo $category->idCategory; ?>" class="fa-pen btn btn-info">Edit</a>
+                                                <a href="<?php echo URLROOT ?>/Admin/deleteCategory/<?php echo $category->idCategory; ?>" class="fas-trash btn btn-danger">Delete</a>
+                                            </td>
+
+                           </tr>
+                           <?php endforeach; ?>
 
                                     </tbody>
+
+                                    
                                 </table>
                             </div>
                         </div>

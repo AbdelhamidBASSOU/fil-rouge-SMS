@@ -49,12 +49,18 @@ class Admin extends Controller
 
   public function category()
   {
-    $data = [
-      'title' => 'Category',
-      'categories' => $this->userModel->getCategories()
-    ];
+    if ($this->userModel->getCategories()) {
+      $data = [
+        'title' => 'Categories',
+        'Categories' => $this->userModel->getCategories()
+      ];
+    } else {
+      $data = [
+        'title' => 'Categories'
+      ];
+    }
 
-    $this->view('admin/category', $data);
+    $this->view('Admin/category', $data);
   }
 
 
@@ -104,7 +110,6 @@ class Admin extends Controller
 
     ];
     $this->view('Admin/addProduct', $data);
-
     if (isset($_POST['addProduct'])) {
       $data = [
         'price' => trim($_POST['Price']),
@@ -137,10 +142,8 @@ class Admin extends Controller
       if (empty($data['name_err']) && empty($data['price_err']) && empty($data['description_err'])) {
         // if (move_uploaded_file($data['image_tmp'],  URLROOT."/public/img/" . $data['img'])) {
         if ($this->userModel->addProducts($data)) {
-          '<script>window.location.href="' . URLROOT . '/Admin/product"</script>';
-        } else {
-          die('Something went wrong');
-        }
+          echo "<script>window.location.href='".URLROOT."/Admin/product ';</script>";
+        } 
       }
       // }
     }
@@ -157,7 +160,7 @@ public function updateProduct($id)
       ];
       $this->view('Admin/updateProduct', $data);
     } else {
-      '<script >window.location.href= </script>';
+      echo "<script>window.location.href='".URLROOT."/Admin/product ';</script>";
     }
     // $this->view('supplier/updateProduct', $data);
     if (isset($_POST['updateProduct'])) {
@@ -191,10 +194,8 @@ public function updateProduct($id)
       if (empty($data['name_err']) && empty($data['price_err']) && empty($data['description_err'])) {
         // if (move_uploaded_file($data['image_tmp'],  URLROOT."/public/img/" . $data['img'])) {
         if ($this->userModel->updateProducts($data)) {
-          header('location: ' . URLROOT . '/Admin/product');
-        } else {
-          die('Something went wrong');
-        }
+          echo "<script>window.location.href='".URLROOT."/Admin/product ';</script>";
+        } 
         // }
       }
     }
@@ -237,10 +238,8 @@ public function updateProduct($id)
       if (empty($data['name_err']) && empty($data['rating_err']) && empty($data['sell_err']) && empty($data['buy_err'])) {
         // if (move_uploaded_file($data['image_tmp'],  URLROOT."/public/img/" . $data['img'])) {
         if ($this->userModel->addBrand($data)) {
-          header('location: ' . URLROOT . '/Admin/brand');
-        } else {
-          die('Something went wrong');
-        }
+          echo "<script>window.location.href='".URLROOT."/Admin/brand ';</script>";
+        } 
         // }
       }
     }
@@ -280,9 +279,7 @@ public function updateProduct($id)
       if (empty($data['name_err']) && empty($data['rating_err']) && empty($data['sell_err']) && empty($data['buy_err'])) {
         // if (move_uploaded_file($data['image_tmp'],  URLROOT."/public/img/" . $data['img'])) {
         if ($this->userModel->updateBrand($data)) {
-          header('location: ' . URLROOT . '/Admin/brand');
-        } else {
-          die('Something went wrong');
+          echo "<script>window.location.href='".URLROOT."/Admin/brand';</script>";
         }
         // }
       }
@@ -296,4 +293,76 @@ public function updateProduct($id)
       die('Something went wrong');
     }
   }
+  public function addCategory()
+  {
+    $data = [
+      'title' => 'Add Category',
+      'Categories' => $this->userModel->getCategories(),
+      'Users' => $this->userModel->getUsers()
+    ];
+    $this->view('Admin/addCategory', $data);
+    if (isset($_POST['addCategory'])) {
+      $data = [
+        'idCategory' => trim($_POST['idCategory']),
+        'Name' => trim($_POST['Name']),
+        'Description' => trim($_POST['Description']),
+        'name_err' => '',
+        'description_err' => '',
+
+      ];
+
+      // if (empty($data['img'])) {
+      //   $data['image_err'] = 'Please select image';
+      // }
+
+      if (empty($data['name_err']) && empty($data['description_err'])) {
+        // if (move_uploaded_file($data['image_tmp'],  URLROOT."/public/img/" . $data['img'])) {
+        if ($this->userModel->addCategory($data)) {
+          echo "<script>window.location.href='".URLROOT."/Admin/category';</script>";
+        } 
+        // }
+      }
+    }
+
+  }
+  public function updateCategory($id){
+    if ($this->userModel->getCategoryById($id)) {
+      $data = [
+        'title' => 'Update Category',
+        'Categories' => $this->userModel->getCategoryById($id),
+        'Users' => $this->userModel->getUsers()
+      ];
+      $this->view('Admin/updateCategory', $data);
+    } else {
+      echo "<script>window.location.href='".URLROOT."/Admin/category';</script>";
+      }
+    // $this->view('supplier/updateProduct', $data);
+    if (isset($_POST['updateCategory'])) {
+      $data = [
+        'idCategory' => trim($_POST['idCategory']),
+        'Name' => trim($_POST['Name']),
+        'Description' => trim($_POST['Description']),
+        'name_err' => '',
+        'description_err' => '',
+      ];
+      if (empty($data['name_err']) && empty($data['description_err'])) {
+        // if (move_uploaded_file($data['image_tmp'],  URLROOT."/public/img/" . $data['img'])) {
+        if ($this->userModel->updateCategory($data)) {
+          echo "<script>window.location.href='".URLROOT."/Admin/category';</script>";
+        }
+    
+  }
+}
+  }
+public function deleteCategory($id)
+  {
+    if ($this->userModel->deleteCategory($id)) {
+      header('location: ' . URLROOT . '/Admin/category');
+    } else {
+      die('Something went wrong');
+    }
+  }
+
+
+
 }

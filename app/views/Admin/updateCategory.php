@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
+    <meta name="Sells" content="" />
     <meta name="author" content="" />
     <title>sup prod</title>
     <link rel="icon" type="image/x-icon" href="<?php echo URLROOT ?>/img/image_processing20200412-21268-172ln5q-removebg-preview.png">
@@ -60,6 +60,8 @@
                             <nav class="sb-sidenav-menu-nested nav">
                                 <a class="nav-link" href="product">Products</a>
                                 <a class="nav-link" href="brand">Brands</a>
+                                <a class="nav-link" href="category">Categories</a>
+
 
                             </nav>
                         </div>
@@ -79,7 +81,7 @@
                                 <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                     <nav class="sb-sidenav-menu-nested nav">
 
-                                        <a class="nav-link" href="Rapport">Rapport</a>
+                                        <a class="nav-link" href="Rapportl">Rapport</a>
                                         <a class="nav-link" href="order">Orders</a>
 
 
@@ -96,69 +98,32 @@
                 </div>
             </nav>
         </div>
-
         <div id="layoutSidenav_content">
             <main>
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4">Products</h1>
-                    <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                        <li class="breadcrumb-item active">Stock</li>
-                    </ol>
-                    <div class="d-flex align-items-center">
-                        <i class="far fa-sort text-info far fs-6 fa-sort me-3  d-sm-block"></i>
-                        <a href="<?php echo URLROOT ?>/Admin/addProduct" class="btn btn-info ">Add</a>
-                    </div>
-                    <div class="card mb-4">
-                        <div class="card-header">
-                            <i class="fas fa-table me-1"></i>
-                            Products Table
-                        </div>
-                        <div class="card-body">
-                            <table id="datatablesSimple">
-                                <thead>
-                                    <tr>
-                                        <th>idProduct</th>
-                                        <th>Price</th>
-                                        <th>Name</th>
-                                        <th>idCategory</th>
-                                        <th>idBrand</th>
-                                        <th>Quantity</th>
-                                        <th>Description</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php foreach ($data['Products'] as $product) : ?>
-                                        <tr>
-                                            <td><?php echo $product->idProduct; ?></td>
-                                            <td><?php echo $product->Price; ?></td>
-                                            <td><?php echo $product->Name; ?></td>
-                                            <td><?php echo $product->idCategory; ?></td>
-                                            <td><?php echo $product->idBrand; ?></td>
-                                            <td><?php echo $product->Quantity; ?></td>
-                                            <td><?php echo $product->Description; ?></td>
-                                            <td>
-                                                <a href="<?php echo URLROOT ?>/Admin/updateProduct/<?php echo $product->idProduct; ?>" class="fa-pen btn btn-info">Edit</a>
-                                                <a href="<?php echo URLROOT ?>/Admin/deleteProduct/<?php echo $product->idProduct; ?>" class="fas-trash btn btn-danger">Delete</a>
-                                            </td>
-                                        </tr>
-                                    <?php endforeach; ?>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                    <h1 class="mt-4">Categories</h1>
+                    <form method="POST" enctype="multipart/form-data">
+                        <fieldset>
+                            <div class="form-group">
+                                <label for="id">idCtagoery</label>
+                                <input type="text" value="<?php echo $data['Categories']->idCategory; ?>" class="form-control" name="idCategory">
+                            </div>
+                            <div class="form-group">
+                                <label for="Name">Name</label>
+                                <input type="text" value="<?php echo $data['Categories']->Name; ?>" class="form-control" placeholder="enter product name" name="Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="Description ">Description</label>
+                                <input type="text" value="<?php echo $data['Categories']->Description; ?>" class="form-control" placeholder="Description" name="Description">
+                            </div>
+                            <button type="submit" name="updateCategory" class="btn-info btn btn-sm mb-2">Update</button>
+                        </fieldset>
+                    </form>
                 </div>
             </main>
-            <footer class="py-4 bg-light mt-auto">
-
-            </footer>
         </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <script src="<?php echo URLROOT ?>/js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
-    <script src="<?php echo URLROOT ?>/js/datatables-simple-demo.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="<?php echo URLROOT ?>/js/scripts.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+        <script src="<?php echo URLROOT ?>/js/datatables-simple-demo.js"></script>
 </body>
-
-</html>
