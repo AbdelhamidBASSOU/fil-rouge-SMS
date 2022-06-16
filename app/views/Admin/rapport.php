@@ -61,6 +61,8 @@
                                 <a class="nav-link" href="product">Products</a>
                                 <a class="nav-link" href="brand">Brands</a>
                                 <a class="nav-link" href="category">Categories</a>
+
+
                             </nav>
                         </div>
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
@@ -96,65 +98,61 @@
                 </div>
             </nav>
         </div>
- 
-            <div id="layoutSidenav_content">
-                <main>
-                    <div class="container-fluid px-4">
-                        <h1 class="mt-4">Categories</h1>
-                        <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Stock</li>
-                        </ol>
-                        <div class="d-flex align-items-center">
-                        <i class="far fa-sort text-info far fs-6 fa-sort me-3  d-sm-block"></i>
-                        <a href="<?php echo URLROOT ?>/Admin/addCategory" type="button" class="btn  bg-info text-white my-3">ADD Category</a>
-                    </div>
-                        
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-table me-1"></i>
-                                Categories Table
-                            </div>
-                            <div class="card-body">
-                                <table id="datatablesSimple">
-                                    <thead>
+
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+                    <h1 class="mt-4">Rapport</h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                        <li class="breadcrumb-item active">Stock</li>
+                    </ol>
+
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fas fa-table me-1"></i>
+                            Rapport Table
+                        </div>
+                        <div class="card-body">
+                            <table id="datatablesSimple">
+                                <thead>
+                                    <tr>
+                                        <th>idRapport</th>
+                                        <th>idUser</th>
+                                        <th>Object</th>
+                                        <th>Detail</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($data['Rapports'] as $rapport) : ?>
                                         <tr>
-                                            <th>idCategory</th>
-                                            <th>Name</th>
-                                            <th>Description</th>
-                                            <th>Actions</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php foreach($data['Categories'] as $category)  :?>
-                           <tr>
-                                            <td><?php echo $category->idCategory; ?></td>
-                                            <td><?php echo $category->Name; ?></td>
-                                            <td><?php echo $category->Description; ?></td>
+                                            <td><?php echo $rapport->idRapport; ?></td>
+                                            <td><?php echo $rapport->idUser; ?></td>
+                                            <td><?php echo $rapport->Object; ?></td>
+                                            <td><?php echo $rapport->Detail; ?></td>
                                             <td>
-                                                <a href="<?php echo URLROOT ?>/Admin/updateCategory/<?php echo $category->idCategory; ?>" class="fa-pen btn btn-info">Edit</a>
-                                                <a href="<?php echo URLROOT ?>/Admin/deleteCategory/<?php echo $category->idCategory; ?>" class="fas-trash btn btn-danger">Delete</a>
+                                                <a href="<?php echo URLROOT ?>/Admin/deleteRapport/<?php echo $rapport->idRapport; ?>" class=" btn btn-info">
+                                                    <div class="fa-check fa-solid"></div>
+                                                </a>
                                             </td>
-
-                           </tr>
-                           <?php endforeach; ?>
-
-                                    </tbody>
-
-                                    
-                                </table>
-                            </div>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-                </main>
-                <footer class="py-4 bg-light mt-auto">
-                   
-                </footer>
-            </div>
+                </div>
+            </main>
+            <footer class="py-4 bg-light mt-auto">
+
+            </footer>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="<?php echo URLROOT ?>/js/scripts.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
-        <script src="<?php echo URLROOT ?>/js/datatables-simple-demo.js"></script>
-    </body>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="<?php echo URLROOT ?>/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+    <script src="<?php echo URLROOT ?>/js/datatables-simple-demo.js"></script>
+</body>
+
 </html>

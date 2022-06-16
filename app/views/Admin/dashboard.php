@@ -81,7 +81,7 @@
                                 <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                     <nav class="sb-sidenav-menu-nested nav">
 
-                                        <a class="nav-link" href="Rapport">Rapport</a>
+                                        <a class="nav-link" href="rapport">Rapport</a>
                                         <a class="nav-link" href="order">Orders</a>
 
 
@@ -98,158 +98,160 @@
                 </div>
             </nav>
         </div>
-            <div id="layoutSidenav_content">
-                <main>
-                    <div class="container-fluid px-4">
-                        <h1 class="mt-4">Dashboard</h1>
-                        <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Dashboard</li>
-                        </ol>
-                        
-                        <div class="row">
-                            <div class="col-xl-3 col-md-6">
-                                <div style="background-color: #00204a;" class="card text-white mb-4">
-                                    <div class="card-body">Total Orders</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">17</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div style="background-color: #005792;" class="card  text-white mb-4">
-                                    <div class="card-body">Total Categories</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">116</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div style="background-color: #00bbf0;" class="card  text-white mb-4">
-                                    <div class="card-body">Total Products</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">1115</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div style="background-color: #fdb44b;" class="card text-white mb-4">
-                                    <div class="card-body">Total Sales</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">15</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-xl-6">
-                                <div class="card mb-4">
-                                    <div class="card-header bg-light">
-                                        <i class="fa fa-list-alt" aria-hidden="true"></i>
-                                        Arrivage details
-                                    </div>
-                                    <div class="col-lg-6 d-flex">
-                                      
-                                            
-                                            <div class="card-body align-items-center"><div class="col-lg-6"style=""></div><canvas id="myPieChart" width="100%" height="50"></canvas></div>
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-6">
-                                <div class="card mb-4">
-                                    <div class="card-header bg-light">
-                                        <i class="fas fa-chart-bar me-1"></i>
-                                        info
-                                    </div>
-                                    <div class="card-body"style="overflow:scroll;max-height:257px">
-                                        <div class="card-header text-white pb-0"style="background-color:#00204a ;">
-                                            <h6>Suppliers overview</h6>
-                                            <p class="text-sm">
-                                              <i class="fa fa-arrow-up text-success" aria-hidden="true"></i>
-                                              <span class="font-weight-bold">24%</span> this month
-                                            </p>
-                                          </div>
-                                          <div class="card-body p-3">
-                                            <div class="timeline timeline-one-side">
-                                              <div class="timeline-block mb-3">
-                                                <span class="timeline-step">
-                                                  <i class="material-icons text-success text-gradient">Supplier 1</i>
-                                                </span>
-                                                <div class="timeline-content">
-                                                  <h6 class="text-dark text-sm font-weight-bold mb-0">Brand Name</h6>
-                                                  <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">orders pourcentage</p>
-                                                </div>
-                                              </div>
-                                              <div class="timeline-block mb-3">
-                                                <span class="timeline-step">
-                                                  <i class="material-icons text-danger text-gradient">Supplir 2</i>
-                                                </span>
-                                                <div class="timeline-content">
-                                                  <h6 class="text-dark text-sm font-weight-bold mb-0">Brand Name2</h6>
-                                                  <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">orders pourcentage</p>
-                                                </div>
-                                              </div>
-                                              <div class="timeline-block mb-3">
-                                                <span class="timeline-step">
-                                                  <i class="material-icons text-info text-gradient">shopping_cart</i>
-                                                </span>
-                                                <div class="timeline-content">
-                                                  <h6 class="text-dark text-sm font-weight-bold mb-0">Server payments for April</h6>
-                                                  <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">21 DEC 9:34 PM</p>
-                                                </div>
-                                              </div>
-                                              <div class="timeline-block mb-3">
-                                                <span class="timeline-step">
-                                                  <i class="material-icons text-warning text-gradient">credit_card</i>
-                                                </span>
-                                                <div class="timeline-content">
-                                                  <h6 class="text-dark text-sm font-weight-bold mb-0">New card added for order #4395133</h6>
-                                                  <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">20 DEC 2:20 AM</p>
-                                                </div>
-                                              </div>
-                                              <div class="timeline-block mb-3">
-                                                <span class="timeline-step">
-                                                  <i class="material-icons text-primary text-gradient">key</i>
-                                                </span>
-                                                <div class="timeline-content">
-                                                  <h6 class="text-dark text-sm font-weight-bold mb-0">Unlock packages for development</h6>
-                                                  <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">18 DEC 4:54 AM</p>
-                                                </div>
-                                              </div>
-                                              <div class="timeline-block">
-                                                <span class="timeline-step">
-                                                  <i class="material-icons text-dark text-gradient">payments</i>
-                                                </span>
-                                                <div class="timeline-content">
-                                                  <h6 class="text-dark text-sm font-weight-bold mb-0">New order #9583120</h6>
-                                                  <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">17 DEC</p>
-                                                </div>
-                                              </div>
-                                    </div>
-                                </div>   
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+                    <h1 class="mt-4">Dashboard</h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item active">Dashboard</li>
+                    </ol>
 
-                                    </div>
+                    <div class="row">
+                        <div class="col-xl-3 col-md-6">
+                            <div style="background-color: #00204a;" class="card text-white mb-4">
+                                <div class="card-body">Total Orders</div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <a class="small text-white stretched-link" href="#"><?php echo $data['orderCount'] ?></a>
+                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="card mb-4">
-                            <div class="card-header bg-light">
-                                <i class="fas fa-table me-1"></i>
-                                Epuisement du stock details
+                        <div class="col-xl-3 col-md-6">
+                            <div style="background-color: #005792;" class="card  text-white mb-4">
+                                <div class="card-body">Total Categories</div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <a class="small text-white stretched-link" href="#">116</a>
+                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                </div>
                             </div>
-                            <div class="card-body">
-                                <table id="datatablesSimple">
+                        </div>
+                        <div class="col-xl-3 col-md-6">
+                            <div style="background-color: #00bbf0;" class="card  text-white mb-4">
+                                <div class="card-body">Total Products</div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <a class="small text-white stretched-link" href="#">1115</a>
+                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6">
+                            <div style="background-color: #fdb44b;" class="card text-white mb-4">
+                                <div class="card-body">Total Sales</div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <a class="small text-white stretched-link" href="#">15</a>
+                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-6">
+                            <div class="card mb-4">
+                                <div class="card-header bg-light">
+                                    <i class="fa fa-list-alt" aria-hidden="true"></i>
+                                    Arrivage details
+                                </div>
+                                <div class="col-lg-6 d-flex">
+
+
+                                    <div class="card-body align-items-center">
+                                        <div class="col-lg-6" style=""></div><canvas id="myPieChart" width="100%" height="50"></canvas>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6">
+                            <div class="card mb-4">
+                                <div class="card-header bg-light">
+                                    <i class="fas fa-chart-bar me-1"></i>
+                                    info
+                                </div>
+                                <div class="card-body" style="overflow:scroll;max-height:257px">
+                                    <div class="card-header text-white pb-0" style="background-color:#00204a ;">
+                                        <h6>Suppliers overview</h6>
+                                        <p class="text-sm">
+                                            <i class="fa fa-arrow-up text-success" aria-hidden="true"></i>
+                                            <span class="font-weight-bold">24%</span> this month
+                                        </p>
+                                    </div>
+                                    <div class="card-body p-3">
+                                        <div class="timeline timeline-one-side">
+                                            <div class="timeline-block mb-3">
+                                                <span class="timeline-step">
+                                                    <i class="material-icons text-success text-gradient">Supplier 1</i>
+                                                </span>
+                                                <div class="timeline-content">
+                                                    <h6 class="text-dark text-sm font-weight-bold mb-0">Brand Name</h6>
+                                                    <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">orders pourcentage</p>
+                                                </div>
+                                            </div>
+                                            <div class="timeline-block mb-3">
+                                                <span class="timeline-step">
+                                                    <i class="material-icons text-danger text-gradient">Supplir 2</i>
+                                                </span>
+                                                <div class="timeline-content">
+                                                    <h6 class="text-dark text-sm font-weight-bold mb-0">Brand Name2</h6>
+                                                    <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">orders pourcentage</p>
+                                                </div>
+                                            </div>
+                                            <div class="timeline-block mb-3">
+                                                <span class="timeline-step">
+                                                    <i class="material-icons text-info text-gradient">shopping_cart</i>
+                                                </span>
+                                                <div class="timeline-content">
+                                                    <h6 class="text-dark text-sm font-weight-bold mb-0">Server payments for April</h6>
+                                                    <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">21 DEC 9:34 PM</p>
+                                                </div>
+                                            </div>
+                                            <div class="timeline-block mb-3">
+                                                <span class="timeline-step">
+                                                    <i class="material-icons text-warning text-gradient">credit_card</i>
+                                                </span>
+                                                <div class="timeline-content">
+                                                    <h6 class="text-dark text-sm font-weight-bold mb-0">New card added for order #4395133</h6>
+                                                    <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">20 DEC 2:20 AM</p>
+                                                </div>
+                                            </div>
+                                            <div class="timeline-block mb-3">
+                                                <span class="timeline-step">
+                                                    <i class="material-icons text-primary text-gradient">key</i>
+                                                </span>
+                                                <div class="timeline-content">
+                                                    <h6 class="text-dark text-sm font-weight-bold mb-0">Unlock packages for development</h6>
+                                                    <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">18 DEC 4:54 AM</p>
+                                                </div>
+                                            </div>
+                                            <div class="timeline-block">
+                                                <span class="timeline-step">
+                                                    <i class="material-icons text-dark text-gradient">payments</i>
+                                                </span>
+                                                <div class="timeline-content">
+                                                    <h6 class="text-dark text-sm font-weight-bold mb-0">New order #9583120</h6>
+                                                    <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">17 DEC</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mb-4">
+                        <div class="card-header bg-light">
+                            <i class="fas fa-table me-1"></i>
+                            Epuisement du stock details
+                        </div>
+                        <div class="card-body">
+                            <table id="datatablesSimple">
                                 <thead>
                                     <tr>
                                         <th>Product</th>
                                         <th>Name</th>
                                         <th>Rating</th>
                                         <th>Status</th>
-                                        
+
                                     </tr>
                                 </thead>
                                 <tfoot>
@@ -258,44 +260,40 @@
                                         <th>Name</th>
                                         <th>Rating</th>
                                         <th>Status</th>
-                                       
+
                                     </tr>
                                 </tfoot>
                                 <tbody>
-                                    <tr >
+                                    <tr>
                                         <td>SNeakers</td>
                                         <td>air jordan 1</td>
                                         <td>4.5 out of 5</td>
                                         <td>almost empty</td>
                                     </tr>
-                                    <tr >
+                                    <tr>
                                         <td>T-Shirt</td>
                                         <td>Nike</td>
                                         <td>3.5 out of 5</td>
                                         <td>available</td>
                                     </tr>
                                 </tbody>
-                                </table>
-                            </div>
+                            </table>
                         </div>
                     </div>
-                </main>
-                
-            </div>
-            
+                </div>
+            </main>
+
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-        <script src="<?php echo URLROOT ?>/js/script.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js" integrity="sha512-sW/w8s4RWTdFFSduOTGtk4isV1+190E/GghVffMA9XczdJ2MDzSzLEubKAs5h0wzgSJOQTRYyaz73L3d6RtJSg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="<?php echo URLROOT ?>/js/demo/chart-area-demo.js"></script>
-        <script src="<?php echo URLROOT ?>/js/demo/chart-bar-demo.js"></script>
-        <script src="<?php echo URLROOT ?>/js/demo/chart-pie-demo.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
-        <script src="<?php echo URLROOT ?>/js/datatables-simple-demo.js"></script>
-    </body>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="<?php echo URLROOT ?>/js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js" integrity="sha512-sW/w8s4RWTdFFSduOTGtk4isV1+190E/GghVffMA9XczdJ2MDzSzLEubKAs5h0wzgSJOQTRYyaz73L3d6RtJSg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="<?php echo URLROOT ?>/js/demo/chart-area-demo.js"></script>
+    <script src="<?php echo URLROOT ?>/js/demo/chart-bar-demo.js"></script>
+    <script src="<?php echo URLROOT ?>/js/demo/chart-pie-demo.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+    <script src="<?php echo URLROOT ?>/js/datatables-simple-demo.js"></script>
+</body>
+
 </html>
-
-
-
-
-

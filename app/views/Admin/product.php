@@ -60,6 +60,8 @@
                             <nav class="sb-sidenav-menu-nested nav">
                                 <a class="nav-link" href="product">Products</a>
                                 <a class="nav-link" href="brand">Brands</a>
+                                <a class="nav-link" href="category">Categories</a>
+
 
                             </nav>
                         </div>
