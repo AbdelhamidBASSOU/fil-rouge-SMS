@@ -83,7 +83,7 @@
                                 <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                     <nav class="sb-sidenav-menu-nested nav">
 
-                                        <a class="nav-link" href="Rapport">Rapport</a>
+                                        <a class="nav-link" href="rapport">Rapport</a>
                                         <a class="nav-link" href="order">Orders</a>
 
 
@@ -112,7 +112,7 @@
                             <div style="background-color:#005792; " class="card text-white mb-4">
                                 <div class="card-body">Total clients</div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">17</a>
+                                    <a class="small text-white stretched-link" href="#"><?php echo $data['clientCount'] ?></a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>

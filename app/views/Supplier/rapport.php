@@ -53,6 +53,8 @@
                             <nav class="sb-sidenav-menu-nested nav">
                                 <a class="nav-link" href="product">Products</a>
                                 <a class="nav-link" href="brand">Brands</a>
+                                
+
 
                             </nav>
                         </div>
@@ -63,8 +65,8 @@
                         </a>
                         <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                
-                
+
+
                                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
                                     Tools
                                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
@@ -72,7 +74,7 @@
                                 <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                     <nav class="sb-sidenav-menu-nested nav">
 
-                                        <a class="nav-link" href="rapport">Rapport</a>
+                                        <a class="nav-link" href="Rapport">Rapport</a>
                                         <a class="nav-link" href="order">Orders</a>
 
 
@@ -85,69 +87,59 @@
                 </div>
                 <div class="sb-sidenav-footer">
                     <div class="small">Logged in as:</div>
-                    <?php echo($_SESSION['Role']); ?>
+                    <?php echo ($_SESSION['Role']); ?>
                 </div>
             </nav>
         </div>
-            <div id="layoutSidenav_content">
-                <main>
-                    <div class="container-fluid px-4">
-                        <h1 class="mt-4">Orders</h1>
-                        <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                            <li class="breadcrumb-item active">Stock</li>
-                        </ol>
-                        <div class="card mb-4">
-                            <div class="card-header">
-                                <i class="fas fa-table me-1"></i>
-                                Orders Table
-                            </div>
-                            <div class="card-body">
-                                <table id="datatablesSimple">
-                                    <thead>
+
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+                    <h1 class="mt-4">Rapport</h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                        <li class="breadcrumb-item active">Stock</li>
+                    </ol>
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fas fa-table me-1"></i>
+                            Rapport Table
+                        </div>
+                        <div class="card-body">
+                            <table id="datatablesSimple">
+                                <thead>
+                                    <tr>
+                                        <th>idRapport</th>
+                                        <th>idUser</th>
+                                        <th>Object</th>
+                                        <th>Detail</th>
+                                    
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($data['Rapports'] as $rapport) : ?>
                                         <tr>
-                                            <th>idOrder</th>
-                                            <th>idUser</th>
-                                            <th>idProduct</th>
-                                            <th>Details</th>
-                                            <th>Quantity</th>
-                                            <th>Actions</th>
+                                            <td><?php echo $rapport->idRapport; ?></td>
+                                            <td><?php echo $rapport->idUser; ?></td>
+                                            <td><?php echo $rapport->Object; ?></td>
+                                            <td><?php echo $rapport->Detail; ?></td>
                                         </tr>
-                                    </thead>
-                                    <?php foreach ($data['Orders'] as $order) { ?>
-
-                                    <tbody>
-                                        <tr>
-                                        <td><?php echo $order->idOrder; ?></td>
-                                        <td><?php echo $order->idUser; ?></td>
-                                        <td><?php echo $order->idProduct; ?></td>
-                                        <td><?php echo $order->idOrder; ?></td>
-                                        <td><?php echo $order->Quantity; ?></td>
-                                        <td><?php echo $order->Status; ?></td>
-                                           <td>
-                                                <?php if($order->Status == "waiting") : ?>
-                                                <a href="<?php echo URLROOT ?>/Supplier/updateOrder/<?php echo $order->idOrder; ?>" class="fa-validate btn btn-info">validate</a>
-                                                <?php endif; ?>
-                                                <a href="<?php echo URLROOT ?>/Supplier/deleteOrder/<?php echo $order->idOrder; ?>" class="fas-trash btn btn-danger">Delete</a>
-                                            </td>
-                                        </tr>
-
-                                    </tbody>
-                                    <?php } ?>
-
-                                </table>
-                            </div>
+                                    <?php endforeach; ?>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
-                </main>
-                <footer class="py-4 bg-light mt-auto">
-                   
-                </footer>
-            </div>
+                </div>
+            </main>
+            <footer class="py-4 bg-light mt-auto">
+
+            </footer>
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <script src="<?php echo URLROOT ?>/js/scripts.js"></script>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="<?php echo URLROOT ?>/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
     <script src="<?php echo URLROOT ?>/js/datatables-simple-demo.js"></script>
 </body>
+
 </html>

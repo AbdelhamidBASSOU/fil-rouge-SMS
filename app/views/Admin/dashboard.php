@@ -20,13 +20,6 @@
         <a class="navbar-brand ps-3" href="dashbord"> <img style="width:70px;height:50px;  " src="<?php echo URLROOT ?>/img/image_processing20200412-21268-172ln5q-removebg-preview.png" alt="logo"></a>
         <!-- Sidebar Toggle-->
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
-        <!-- Navbar Search-->
-        <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-            <div class="input-group">
-                <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-                <button class="btn btn-info" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
-            </div>
-        </form>
         <!-- Navbar-->
         <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
             <li class="nav-item dropdown">
@@ -111,7 +104,7 @@
                             <div style="background-color: #00204a;" class="card text-white mb-4">
                                 <div class="card-body">Total Orders</div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#"><?php echo $data['orderCount'] ?></a>
+                                    <a class="small text-white stretched-link" href="<?php echo URLROOT ?>/Admin/order"><?php echo $data['orderCount'] ?></a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
@@ -120,7 +113,7 @@
                             <div style="background-color: #005792;" class="card  text-white mb-4">
                                 <div class="card-body">Total Categories</div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">116</a>
+                                    <a class="small text-white stretched-link" href="<?php echo URLROOT ?>/Admin/category"><?php echo $data['categoryCount'] ?></a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
@@ -129,16 +122,16 @@
                             <div style="background-color: #00bbf0;" class="card  text-white mb-4">
                                 <div class="card-body">Total Products</div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">1115</a>
+                                    <a class="small text-white stretched-link" href="<?php echo URLROOT ?>/Admin/product"><?php echo $data['productCount'] ?></a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-xl-3 col-md-6">
                             <div style="background-color: #fdb44b;" class="card text-white mb-4">
-                                <div class="card-body">Total Sales</div>
+                                <div class="card-body">Total Brands</div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">15</a>
+                                    <a class="small text-white stretched-link" href="<?php echo URLROOT ?>/Admin/brand"><?php echo $data['brandCount'] ?></a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
@@ -147,15 +140,12 @@
                     <div class="row">
                         <div class="col-xl-6">
                             <div class="card mb-4">
-                                <div class="card-header bg-light">
-                                    <i class="fa fa-list-alt" aria-hidden="true"></i>
-                                    Arrivage details
-                                </div>
+                                
                                 <div class="col-lg-6 d-flex">
 
 
-                                    <div class="card-body align-items-center">
-                                        <div class="col-lg-6" style=""></div><canvas id="myPieChart" width="100%" height="50"></canvas>
+                                    <div class="card-body  align-items-center">
+                                        <div class="col-lg-6"></div><canvas id="myPieChart" width="100%" height="50"></canvas>
                                     </div>
 
                                 </div>
@@ -163,74 +153,34 @@
                         </div>
                         <div class="col-xl-6">
                             <div class="card mb-4">
-                                <div class="card-header bg-light">
-                                    <i class="fas fa-chart-bar me-1"></i>
-                                    info
-                                </div>
+                               
                                 <div class="card-body" style="overflow:scroll;max-height:257px">
                                     <div class="card-header text-white pb-0" style="background-color:#00204a ;">
                                         <h6>Suppliers overview</h6>
                                         <p class="text-sm">
                                             <i class="fa fa-arrow-up text-success" aria-hidden="true"></i>
-                                            <span class="font-weight-bold">24%</span> this month
+                                            <span class="font-weight-bold"><?php echo $data['supplierCount'] ?></span><br />Suppliers in total
                                         </p>
                                     </div>
                                     <div class="card-body p-3">
                                         <div class="timeline timeline-one-side">
-                                            <div class="timeline-block mb-3">
-                                                <span class="timeline-step">
-                                                    <i class="material-icons text-success text-gradient">Supplier 1</i>
-                                                </span>
-                                                <div class="timeline-content">
-                                                    <h6 class="text-dark text-sm font-weight-bold mb-0">Brand Name</h6>
-                                                    <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">orders pourcentage</p>
+
+                                            <?php foreach ($data['brandUser'] as $brand) : ?>
+
+
+                                                <div class="timeline-block mb-3">
+                                                    <span class="timeline-step">
+                                                        <i class="material-icons text-success text-gradient"><?php echo $brand->FullName ?> </i>
+                                                    </span>
+                                                    <div class="timeline-content">
+                                                        <h6 class="text-dark text-sm font-weight-bold mb-0"><?php echo  $brand->Name ?> </h6>
+                                                        <p class="text-secondary font-weight-bold text-xs mt-1 mb-0"><?php echo $brand->Rating ?></p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="timeline-block mb-3">
-                                                <span class="timeline-step">
-                                                    <i class="material-icons text-danger text-gradient">Supplir 2</i>
-                                                </span>
-                                                <div class="timeline-content">
-                                                    <h6 class="text-dark text-sm font-weight-bold mb-0">Brand Name2</h6>
-                                                    <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">orders pourcentage</p>
-                                                </div>
-                                            </div>
-                                            <div class="timeline-block mb-3">
-                                                <span class="timeline-step">
-                                                    <i class="material-icons text-info text-gradient">shopping_cart</i>
-                                                </span>
-                                                <div class="timeline-content">
-                                                    <h6 class="text-dark text-sm font-weight-bold mb-0">Server payments for April</h6>
-                                                    <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">21 DEC 9:34 PM</p>
-                                                </div>
-                                            </div>
-                                            <div class="timeline-block mb-3">
-                                                <span class="timeline-step">
-                                                    <i class="material-icons text-warning text-gradient">credit_card</i>
-                                                </span>
-                                                <div class="timeline-content">
-                                                    <h6 class="text-dark text-sm font-weight-bold mb-0">New card added for order #4395133</h6>
-                                                    <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">20 DEC 2:20 AM</p>
-                                                </div>
-                                            </div>
-                                            <div class="timeline-block mb-3">
-                                                <span class="timeline-step">
-                                                    <i class="material-icons text-primary text-gradient">key</i>
-                                                </span>
-                                                <div class="timeline-content">
-                                                    <h6 class="text-dark text-sm font-weight-bold mb-0">Unlock packages for development</h6>
-                                                    <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">18 DEC 4:54 AM</p>
-                                                </div>
-                                            </div>
-                                            <div class="timeline-block">
-                                                <span class="timeline-step">
-                                                    <i class="material-icons text-dark text-gradient">payments</i>
-                                                </span>
-                                                <div class="timeline-content">
-                                                    <h6 class="text-dark text-sm font-weight-bold mb-0">New order #9583120</h6>
-                                                    <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">17 DEC</p>
-                                                </div>
-                                            </div>
+
+                                            <?php endforeach; ?>
+
+
                                         </div>
                                     </div>
 
@@ -238,48 +188,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card mb-4">
-                        <div class="card-header bg-light">
-                            <i class="fas fa-table me-1"></i>
-                            Epuisement du stock details
-                        </div>
-                        <div class="card-body">
-                            <table id="datatablesSimple">
-                                <thead>
-                                    <tr>
-                                        <th>Product</th>
-                                        <th>Name</th>
-                                        <th>Rating</th>
-                                        <th>Status</th>
-
-                                    </tr>
-                                </thead>
-                                <tfoot>
-                                    <tr>
-                                        <th>Product</th>
-                                        <th>Name</th>
-                                        <th>Rating</th>
-                                        <th>Status</th>
-
-                                    </tr>
-                                </tfoot>
-                                <tbody>
-                                    <tr>
-                                        <td>SNeakers</td>
-                                        <td>air jordan 1</td>
-                                        <td>4.5 out of 5</td>
-                                        <td>almost empty</td>
-                                    </tr>
-                                    <tr>
-                                        <td>T-Shirt</td>
-                                        <td>Nike</td>
-                                        <td>3.5 out of 5</td>
-                                        <td>available</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+                   
                 </div>
             </main>
 
@@ -289,11 +198,22 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="<?php echo URLROOT ?>/js/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js" integrity="sha512-sW/w8s4RWTdFFSduOTGtk4isV1+190E/GghVffMA9XczdJ2MDzSzLEubKAs5h0wzgSJOQTRYyaz73L3d6RtJSg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="<?php echo URLROOT ?>/js/demo/chart-area-demo.js"></script>
-    <script src="<?php echo URLROOT ?>/js/demo/chart-bar-demo.js"></script>
-    <script src="<?php echo URLROOT ?>/js/demo/chart-pie-demo.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
     <script src="<?php echo URLROOT ?>/js/datatables-simple-demo.js"></script>
+    <script>
+        var ctx = document.getElementById("myPieChart");
+        var myPieChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ["Order", "Category", "Product", "Brand", 'Supplier'],
+                datasets: [{
+                    data: [<?php echo $data['orderCount'] ?>, <?php echo $data['categoryCount'] ?>, <?php echo $data['productCount'] ?>, <?php echo $data['brandCount'] ?>, <?php echo $data['supplierCount'] ?>],
+                    backgroundColor: ['#fdb44b', '#00bbf0', '#005792', '#00204a', '#47B5FF'],
+                }],
+            },
+        });
+    </script>
 </body>
 
 </html>

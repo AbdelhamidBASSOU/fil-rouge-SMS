@@ -13,7 +13,12 @@ class Admin extends Controller
       $data = [
         'title' => 'Dashboard',
         'users' => $this->userModel->getAll(),
-        'orderCount' => $this->userModel->ordersCount()
+        'orderCount' => $this->userModel->ordersCount(),
+        'categoryCount' => $this->userModel->categoryCount(),
+        'productCount' => $this->userModel->productCount(),
+        'brandCount' => $this->userModel->brandCount(),
+        'supplierCount' => $this->userModel->supplierCount(),
+        'brandUser' => $this->userModel->brandUser(),
       ];
     } else {
       $data = [
@@ -118,6 +123,22 @@ class Admin extends Controller
     ];
     $this->view('Admin/addProduct', $data);
     if (isset($_POST['addProduct'])) {
+
+      $output_dir = "public/uploads";//Path for file upload
+
+          $RandomNum = time();
+
+
+
+          $ImageName = str_replace(' ','-',strtolower($_FILES['image']['name']));
+         //"image/png", image/jpeg etc.
+          $ImageExt = substr($ImageName, strrpos($ImageName, '.'));
+          $ImageExt = str_replace('.','',$ImageExt);
+          $ImageName = preg_replace("/.[^.\s]{3,4}$/", "", $ImageName);
+          $NewImageName = $ImageName.'-'.$RandomNum.'.'.$ImageExt;
+          $ret[$NewImageName]= $output_dir.$NewImageName; 
+          move_uploaded_file($_FILES["image"]["tmp_name"],"C:/xampp2/htdocs/fill_rouge_location_voiture" ."/".$output_dir."/".$NewImageName );
+
       $data = [
         'price' => trim($_POST['Price']),
         'Name' => trim($_POST['Name']),
@@ -125,8 +146,8 @@ class Admin extends Controller
         'Quantity' => trim($_POST['Quantity']),
         'idBrand' => trim($_POST['idBrand']),
         'idCategory' => trim($_POST['idCategory']),
-        'img' => trim($_FILES['img']['name']),
-        'image_tmp' => trim($_FILES['img']['tmp_name']),
+        'img' => $NewImageName,
+       
         'name_err' => '',
         'price_err' => '',
         'description_err' => '',

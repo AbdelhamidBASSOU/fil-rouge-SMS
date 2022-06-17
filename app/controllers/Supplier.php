@@ -10,6 +10,12 @@ class Supplier extends Controller
   {
     $data = [
       'title' => 'Dashboard',
+      'orderCount' => $this->UserModel->ordersCount(),
+      'categoryCount' => $this->UserModel->categoryCount(),
+      'productCount' => $this->UserModel->productCount(),
+      'brandCount' => $this->UserModel->brandCount(),
+      'clientCount' => $this->UserModel->clientCount(),
+      'brandUser' => $this->UserModel->brandUser(),
 
     ];
     
@@ -271,4 +277,31 @@ class Supplier extends Controller
       }
     }
   }
+  public function updateOrder($id)
+  {
+    if ($this->UserModel->updateOrders($id)) {
+      header('location: ' . URLROOT . '/Supplier/order');
+    } else {
+      die('Something went wrong');
+    }
+  }
+  public function deleteOrder($id)
+  {
+    if ($this->UserModel->deleteOrders($id)) {
+      header('location: ' . URLROOT . '/Supplier/order');
+    } else {
+      die('Something went wrong');
+    }
+  }
+  public function rapport()
+  {
+    $data = [
+      'title' => 'Rapport',
+      'Rapports' => $this->UserModel->getRapport()
+    ];
+    $this->view('Supplier/rapport', $data);
+  }
+
+
+
 }

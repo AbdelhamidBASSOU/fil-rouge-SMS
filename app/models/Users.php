@@ -220,8 +220,62 @@ class Users
     }
     public function ordersCount()
     {
-        $result = $this->db->query('SELECT COUNT(*) FROM commande');
-        $result = $this->db->execute();
+        $result = $this->db->query('SELECT * FROM commande');
+        $result = $this->db->resultSet();
+        $result = count($result);
+
+
+
+
+        return $result;
+    }
+    public function categoryCount()
+    {
+        $result = $this->db->query('SELECT * FROM category');
+        $result = $this->db->resultSet();
+        $result = count($result);
+        return $result;
+    }
+
+    public function productCount()
+    {
+        $result = $this->db->query('SELECT * FROM product');
+        $result = $this->db->resultSet();
+        $result = count($result);
+        return $result;
+    }
+    public function brandCount()
+    {
+        $result = $this->db->query('SELECT * FROM brand');
+        $result = $this->db->resultSet();
+        $result = count($result);
+        return $result;
+    }
+    public function supplierCount()
+    {
+        $result = $this->db->query('SELECT * FROM Users WHERE Role=:Supplier');
+        $result = $this->db->bind(':Supplier', 'Supplier');
+        $result = $this->db->resultSet();
+        $result = count($result);
+        return $result;
+    }
+    public function clientCount()
+    {
+        $result = $this->db->query('SELECT * FROM Users WHERE Role=:Client');
+        $result = $this->db->bind(':Client', 'Client');
+        $result = $this->db->resultSet();
+        $result = count($result);
+        return $result;
+    }
+
+    public function brandUser()
+    {
+        $result = $this->db->query('SELECT * FROM brand INNER JOIN users ON brand.idUser=users.idUser; ');
+
+        $result = $this->db->resultSet();
+
+        // print_r($result);
+        // die();
 
         return $result;
     }
