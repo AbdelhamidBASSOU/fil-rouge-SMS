@@ -81,7 +81,7 @@ class Users
     }
     public function getOrders()
     {
-        $result = $this->db->query('SELECT * FROM commande');
+        $result = $this->db->query('SELECT * FROM commande ORDER BY date');
         // $result = $this->db->execute();
         $result = $this->db->resultSet();
         return $result;
@@ -118,7 +118,7 @@ class Users
     }
     public function updateProducts($data)
     {
-        $result = $this->db->query('UPDATE product SET idCategory=:idCategory,idBrand=:idBrand,Price=:Price,Name=:Name,Quantity=:Quantity,Description=:Description WHERE idProduct=:idProduct');
+        $result = $this->db->query('UPDATE product SET idCategory=:idCategory,idBrand=:idBrand,Price=:Price,Name=:Name,Quantity=:Quantity,Description=:Description , img=:image WHERE idProduct=:idProduct');
         $result = $this->db->bind(':idProduct', $data['idProduct']);
         $result = $this->db->bind(':Price', $data['price']);
         $result = $this->db->bind(':Name', $data['Name']);
@@ -126,7 +126,7 @@ class Users
         $result = $this->db->bind(':Description', $data['description']);
         $result = $this->db->bind(':idBrand', $data['idBrand']);
         $result = $this->db->bind(':idCategory', $data['idCategory']);
-        // $result = $this->db->bind(':image', $data['img']);
+        $result = $this->db->bind(':image', $data['img']);
         $result = $this->db->execute();
         return $result;
     }
@@ -229,6 +229,15 @@ class Users
 
         return $result;
     }
+    public function OrderCountBySup(){
+        $result = $this->db->query('SELECT * FROM commande WHERE idUser=:idUser');
+        $result = $this->db->bind(':idUser', $_SESSION['id']);
+        $result = $this->db->resultSet();
+        $result = count($result);
+         return $result;
+
+
+    }
     public function categoryCount()
     {
         $result = $this->db->query('SELECT * FROM category');
@@ -271,9 +280,7 @@ class Users
     public function brandUser()
     {
         $result = $this->db->query('SELECT * FROM brand INNER JOIN users ON brand.idUser=users.idUser; ');
-
         $result = $this->db->resultSet();
-
         // print_r($result);
         // die();
 

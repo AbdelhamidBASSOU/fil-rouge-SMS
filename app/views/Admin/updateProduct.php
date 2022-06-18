@@ -51,7 +51,7 @@
             </a>
             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
               <nav class="sb-sidenav-menu-nested nav">
-                <a class="nav-link" href="<?php echo URLROOT?>/Admin/product">Products</a>
+                <a class="nav-link" href="<?php echo URLROOT ?>/Admin/product">Products</a>
                 <a class="nav-link" href="brand">Brands</a>
 
               </nav>
@@ -93,7 +93,7 @@
       <main>
         <div class="container-fluid px-4">
           <h1 class="mt-4">Products</h1>
-          <form method="POST"  enctype="multipart/form-data">
+          <form method="POST" enctype="multipart/form-data">
             <fieldset>
               <div class="form-group">
                 <label for="id">idProduct</label>
@@ -106,7 +106,7 @@
 
               <div class="form-group">
                 <label for="Image ">Image</label>
-                <input type="file" value="<?php echo $data['Products']->img; ?> class="form-control" placeholder="" name="img">
+                <input type="file" value="<?php echo $data['Products']->img; ?> class=" form-control" placeholder="" name="img">
               </div>
               <div class="form-group">
                 <label for="Name">Name</label>
@@ -131,12 +131,12 @@
               </div>
               <div class="form-group">
                 <label for="Description">Description</label>
-                <input type="text" value="<?php echo $data['Products']->Description; ?>"class="form-control" placeholder="Description" name="Description">
+                <input type="text" value="<?php echo $data['Products']->Description; ?>" class="form-control" placeholder="Description" name="Description">
               </div>
               <button type="submit" name="updateProduct" class="btn-info btn btn-sm mb-2">Update</button>
             </fieldset>
           </form>
-          
+
         </div>
       </main>
     </div>

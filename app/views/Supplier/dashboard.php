@@ -24,13 +24,7 @@
         <a class="navbar-brand ps-3" href="dashbord"> <img style="width:70px;height:50px;  " src="<?php echo URLROOT ?>/img/image_processing20200412-21268-172ln5q-removebg-preview.png" alt="logo"></a>
         <!-- Sidebar Toggle-->
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
-        <!-- Navbar Search-->
-        <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-            <div class="input-group">
-                <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-                <button class="btn btn-info" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
-            </div>
-        </form>
+
         <!-- Navbar-->
         <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
             <li class="nav-item dropdown">
@@ -113,15 +107,15 @@
                                 <div class="card-body">Total clients</div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
                                     <a class="small text-white stretched-link" href="#"><?php echo $data['clientCount'] ?></a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    <div class="small text-white"></div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-xl-3 col-md-6">
                             <div style="background-color:#00204a; " class="card  text-white mb-4">
-                                <div class="card-body">Product needed</div>
+                                <div class="card-body">Total orders</div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">116</a>
+                                    <a class="small text-white stretched-link" href="<?php echo URLROOT ?>/supplier/product"><?php echo $data['orderCount'] ?></a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
@@ -130,191 +124,164 @@
                             <div style="background-color:#fdb44b; " class="card  text-white mb-4">
                                 <div class="card-body">Total Products</div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">1115</a>
+                                    <a class="small text-white stretched-link" href="<?php echo URLROOT ?>/Supplier/product"><?php echo $data['productCount'] ?></a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
                         </div>
                         <div class="col-xl-3 col-md-6">
                             <div style="background-color:#00bbf0; " class="card text-white mb-4">
-                                <div class="card-body">Total Sales</div>
+                                <div class="card-body">Total brands</div>
                                 <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">15</a>
+                                    <a class="small text-white stretched-link" href="<?php echo URLROOT ?>/supplier/brand"><?php echo $data['brandCount'] ?></a>
                                     <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-xl-6 h-100">
-                            <div class="card mb-4" style="height:420px;">
+                    <div class="row" style="width:100%">
 
-                                <div class="card-header bg-light">
-                                    <i class="fa fa-list-alt" aria-hidden="true"></i>
-                                    Orders Statistics
-                                </div>
-                                <h5 align="center" style="color: orange;" class="pt-4">
-                                    Orders in function of months
-                                </h5>
-                                <div class="d-flex">
-                                    <div class="card-body"><canvas id="myAreaChart" width="100%" height="60" style="padding-top:40px;"></canvas></div>
-                                </div>
-                            </div>
+                        <div class="card mb-4" ">
+
+                                <div class=" card-header bg-light">
+                            <i class="fa fa-list-alt" aria-hidden="true"></i>
+                            Orders OverView
                         </div>
-                        <div class="col-xl-6">
-                            <div class="card  mb-4">
-                                <div class="card-header bg-light">
-                                    <i class="fas fa-chart-bar me-1"></i>
-                                    Calendar
-                                </div>
-                                <div class="card-body" style="">
-                                    <h5 align="center" style="color: orange;">
-                                        January 2022
-                                    </h5>
-
-                                    <table class="table-responsive" bgcolor="lightgrey" align="center" cellspacing="10" cellpadding="10">
-
-
-
-
-
-
-                                        <thead>
-                                            <tr>
-                                                <th style="color: white; background: #00bbf0;">
-                                                    Sun</th>
-                                                <th style="color: white; background: #00bbf0;">
-                                                    Mon</th>
-                                                <th style="color: white; background: #00bbf0;">
-                                                    Tue</th>
-                                                <th style="color: white; background: #00bbf0;">
-                                                    Wed</th>
-                                                <th style="color: white; background: #00bbf0;">
-                                                    Thu</th>
-                                                <th style="color: white; background: #00bbf0;">
-                                                    Fri</th>
-                                                <th style="color: white; background: #00bbf0;">
-                                                    Sat</th>
-                                            </tr>
-                                        </thead>
-
-                                        <tbody>
-                                            <tr>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>1</td>
-                                                <td>2</td>
-                                            </tr>
-                                            <tr></tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>4</td>
-                                                <td>5</td>
-                                                <td>6</td>
-                                                <td>7</td>
-                                                <td>8</td>
-                                                <td>9</td>
-                                            </tr>
-                                            <tr>
-                                                <td>10</td>
-                                                <td>11</td>
-                                                <td>12</td>
-                                                <td>13</td>
-                                                <td>14</td>
-                                                <td>15</td>
-                                                <td>16</td>
-                                            </tr>
-                                            <tr>
-                                                <td>17</td>
-                                                <td>18</td>
-                                                <td>19</td>
-                                                <td>20</td>
-                                                <td>21</td>
-                                                <td>22</td>
-                                                <td>23</td>
-                                            </tr>
-                                            <tr>
-                                                <td>24</td>
-                                                <td>25</td>
-                                                <td>26</td>
-                                                <td>27</td>
-                                                <td>28</td>
-                                                <td>29</td>
-                                                <td>30</td>
-                                            </tr>
-                                            <tr>
-                                                <td>31</td>
-                                                <td>1</td>
-                                                <td>2</td>
-                                                <td>3</td>
-                                                <td>4</td>
-                                                <td>5</td>
-                                                <td>6</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
+                        <div class="d-flex">
+                            <div class="card-body"><canvas id="myAreaChart"></canvas></div>
                         </div>
+
+
                     </div>
-                    <div class="card mb-4">
-                        <div class="card-header bg-light">
-                            <i class="fas fa-table me-1"></i>
-                            TOP Brands
-                        </div>
-                        <div class="card-body">
-                            <table id="datatablesSimple">
-                                <thead>
-                                    <tr>
-                                        <th>Brand</th>
 
-                                        <th>Rating</th>
-                                        <th>Status</th>
+                </div>
+                <div class="card mb-4">
+                    <div class="card-header bg-light">
+                        <i class="fas fa-table me-1"></i>
+                        TOP Brands
+                    </div>
+                    <div class="card-body">
+                        <table id="datatablesSimple">
+                            <thead>
+                                <tr>
+                                    <th>Brand</th>
 
-                                    </tr>
-                                </thead>
-                                <tfoot>
-                                    <tr>
-                                        <th>Brand</th>
+                                    <th>Rating</th>
+                                    <th>Status</th>
 
-                                        <th>Rating</th>
-                                        <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <th>Brand</th>
 
-                                    </tr>
-                                </tfoot>
-                                <tbody>
-                                    <tr>
-                                        <td>Nike</td>
+                                    <th>Rating</th>
+                                    <th>Status</th>
 
-                                        <td>4.5 out of 5</td>
-                                        <td>almost empty</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Puma</td>
+                                </tr>
+                            </tfoot>
+                            <tbody>
+                                <tr>
+                                    <td>Nike</td>
 
-                                        <td>3.5 out of 5</td>
-                                        <td>available</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                                    <td>4.5 out of 5</td>
+                                    <td>almost empty</td>
+                                </tr>
+                                <tr>
+                                    <td>Puma</td>
+
+                                    <td>3.5 out of 5</td>
+                                    <td>available</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-            </main>
-
         </div>
+        </main>
+
+    </div>
+
+
+
 
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="<?php echo URLROOT ?>/js/script.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-    <script src="<?php echo URLROOT ?>/js/demo/chart-area-demo.js"></script>
-    <script src="<?php echo URLROOT ?>/js/demo/chart-bar-demo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
     <script src="<?php echo URLROOT ?>/js/datatables-simple-demo.js"></script>
+    <script>
+        var ctx = document.getElementById("myAreaChart");
+
+        var myLineChart = new Chart(ctx, {
+            type: "line",
+            data: {
+
+                labels: [
+
+                    <?php
+                    foreach ($data['date'] as $key => $item) {
+                        echo "'" . $key . "',";
+                    ?>
+
+
+                    <?php } ?>
+
+                ],
+                datasets: [{
+                    label: "Sessions",
+                    lineTension: 0.3,
+                    backgroundColor: "rgba(2,117,216,0.2)",
+                    borderColor: "rgba(2,117,216,1)",
+                    pointRadius: 5,
+                    pointBackgroundColor: "rgba(2,117,216,1)",
+                    pointBorderColor: "rgba(255,255,255,0.8)",
+                    pointHoverRadius: 5,
+                    pointHoverBackgroundColor: "rgba(2,117,216,1)",
+                    pointHitRadius: 50,
+                    pointBorderWidth: 2,
+                    data: [
+                        <?php
+                        foreach ($data['date'] as $key => $item) {
+                            echo "'" . $item . "',";
+                        ?>
+
+
+                        <?php } ?>
+                    ],
+                }, ],
+            },
+            options: {
+                scales: {
+                    xAxes: [{
+                        time: {
+                            unit: "date",
+                        },
+                        gridLines: {
+                            display: false,
+                        },
+                        ticks: {
+                            maxTicksLimit: 7,
+                        },
+                    }, ],
+                    yAxes: [{
+                        ticks: {
+                            min: 0,
+                            max: 10,
+                            maxTicksLimit: 5,
+                        },
+                        gridLines: {
+                            color: "rgba(0, 0, 0, .125)",
+                        },
+                    }, ],
+                },
+                legend: {
+                    display: false,
+                },
+            },
+        });
+    </script>
 </body>
 
-</html>
+</html

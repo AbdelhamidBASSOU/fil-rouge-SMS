@@ -114,30 +114,25 @@ class Admin extends Controller
   public function addProduct()
   {
 
-    $data = [
-      'title' => 'Add Product',
-      'Brands' => $this->userModel->getBrands(),
-      'Categories' => $this->userModel->getCategories(),
-      'Users' => $this->userModel->getUsers()
 
-    ];
-    $this->view('Admin/addProduct', $data);
     if (isset($_POST['addProduct'])) {
 
-      $output_dir = "public/uploads";//Path for file upload
-
-          $RandomNum = time();
 
 
+      $output_dir = "public/uploads"; //Path for file upload
 
-          $ImageName = str_replace(' ','-',strtolower($_FILES['image']['name']));
-         //"image/png", image/jpeg etc.
-          $ImageExt = substr($ImageName, strrpos($ImageName, '.'));
-          $ImageExt = str_replace('.','',$ImageExt);
-          $ImageName = preg_replace("/.[^.\s]{3,4}$/", "", $ImageName);
-          $NewImageName = $ImageName.'-'.$RandomNum.'.'.$ImageExt;
-          $ret[$NewImageName]= $output_dir.$NewImageName; 
-          move_uploaded_file($_FILES["image"]["tmp_name"],"C:/xampp2/htdocs/fill_rouge_location_voiture" ."/".$output_dir."/".$NewImageName );
+      $RandomNum = time();
+
+
+
+      $ImageName = str_replace(' ', '-', strtolower($_FILES['img']['name']));
+
+      $ImageExt = substr($ImageName, strrpos($ImageName, '.'));
+      $ImageExt = str_replace('.', '', $ImageExt);
+      $ImageName = preg_replace("/.[^.\s]{3,4}$/", "", $ImageName);
+      $NewImageName = $ImageName . '-' . $RandomNum . '.' . $ImageExt;
+      $ret[$NewImageName] = $output_dir . $NewImageName;
+      move_uploaded_file($_FILES["img"]["tmp_name"], "C:/xampp/htdocs/fil-rouge-SMS" . "/" . $output_dir . "/" . $NewImageName);
 
       $data = [
         'price' => trim($_POST['Price']),
@@ -147,7 +142,7 @@ class Admin extends Controller
         'idBrand' => trim($_POST['idBrand']),
         'idCategory' => trim($_POST['idCategory']),
         'img' => $NewImageName,
-       
+
         'name_err' => '',
         'price_err' => '',
         'description_err' => '',
@@ -174,6 +169,15 @@ class Admin extends Controller
         }
       }
       // }
+    } else {
+      $data = [
+        'title' => 'Add Product',
+        'Brands' => $this->userModel->getBrands(),
+        'Categories' => $this->userModel->getCategories(),
+        'Users' => $this->userModel->getUsers()
+
+      ];
+      $this->view('Admin/addProduct', $data);
     }
   }
   public function updateProduct($id)
@@ -191,6 +195,24 @@ class Admin extends Controller
     }
     // $this->view('supplier/updateProduct', $data);
     if (isset($_POST['updateProduct'])) {
+
+
+      $output_dir = "public/uploads"; //Path for file upload
+
+      $RandomNum = time();
+
+
+
+      $ImageName = str_replace(' ', '-', strtolower($_FILES['img']['name']));
+
+      $ImageExt = substr($ImageName, strrpos($ImageName, '.'));
+      $ImageExt = str_replace('.', '', $ImageExt);
+      $ImageName = preg_replace("/.[^.\s]{3,4}$/", "", $ImageName);
+      $NewImageName = $ImageName . '-' . $RandomNum . '.' . $ImageExt;
+      $ret[$NewImageName] = $output_dir . $NewImageName;
+      move_uploaded_file($_FILES["img"]["tmp_name"], "C:/xampp/htdocs/fil-rouge-SMS" . "/" . $output_dir . "/" . $NewImageName);
+
+
       $data = [
         'idProduct' => trim($_POST['idProduct']),
         'price' => trim($_POST['Price']),
@@ -199,8 +221,8 @@ class Admin extends Controller
         'Quantity' => trim($_POST['Quantity']),
         'idBrand' => trim($_POST['idBrand']),
         'idCategory' => trim($_POST['idCategory']),
-        'img' => trim($_FILES['img']['name']),
-        'image_tmp' => trim($_FILES['img']['tmp_name']),
+        'img' => $NewImageName,
+
         'name_err' => '',
         'price_err' => '',
         'description_err' => '',

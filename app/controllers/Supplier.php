@@ -8,6 +8,16 @@ class Supplier extends Controller
   }
   public function dashboard()
   {
+
+    $orders =  $this->UserModel->getOrders();
+
+    $date = [];
+    foreach ($orders as $order) {
+      $date[$order->date] =  $date[$order->date] ?? 0;
+      $date[$order->date]  = $date[$order->date] + 1;
+    }
+
+
     $data = [
       'title' => 'Dashboard',
       'orderCount' => $this->UserModel->ordersCount(),
@@ -16,9 +26,11 @@ class Supplier extends Controller
       'brandCount' => $this->UserModel->brandCount(),
       'clientCount' => $this->UserModel->clientCount(),
       'brandUser' => $this->UserModel->brandUser(),
+      'OrderCountBySup'=>$this->UserModel->OrderCountBySup(),
+      'date' => $date
 
     ];
-    
+
     if (!isset($_SESSION['Role'])) {
       header('location: ' . URLROOT . '/index');
     } elseif ($_SESSION['Role']  != "Supplier") {
@@ -125,8 +137,8 @@ class Supplier extends Controller
       if (empty($data['name_err']) && empty($data['price_err']) && empty($data['description_err'])) {
         // if (move_uploaded_file($data['image_tmp'],  URLROOT."/public/img/" . $data['img'])) {
         if ($this->UserModel->addProducts($data)) {
-          echo "<script>window.location.href='".URLROOT."/Supplier/product ';</script>";
-        } 
+          echo "<script>window.location.href='" . URLROOT . "/Supplier/product ';</script>";
+        }
       }
       // }
     }
@@ -142,7 +154,7 @@ class Supplier extends Controller
       ];
       $this->view('supplier/updateProduct', $data);
     } else {
-      echo "<script>window.location.href='".URLROOT."/Supplier/product ';</script>";
+      echo "<script>window.location.href='" . URLROOT . "/Supplier/product ';</script>";
     }
     // $this->view('supplier/updateProduct', $data);
     if (isset($_POST['updateProduct'])) {
@@ -176,8 +188,8 @@ class Supplier extends Controller
       if (empty($data['name_err']) && empty($data['price_err']) && empty($data['description_err'])) {
         // if (move_uploaded_file($data['image_tmp'],  URLROOT."/public/img/" . $data['img'])) {
         if ($this->UserModel->updateProducts($data)) {
-          echo "<script>window.location.href='".URLROOT."/Supplier/product ';</script>";
-        } 
+          echo "<script>window.location.href='" . URLROOT . "/Supplier/product ';</script>";
+        }
         // }
       }
     }
@@ -198,7 +210,7 @@ class Supplier extends Controller
       die('Something went wrong');
     }
   }
- 
+
   public function addBrand()
   {
     $data = [
@@ -219,7 +231,7 @@ class Supplier extends Controller
         'rating_err' => '',
         'sell_err' => '',
         'buy_err' => '',
-       
+
       ];
 
       // if (empty($data['img'])) {
@@ -229,13 +241,13 @@ class Supplier extends Controller
       if (empty($data['name_err']) && empty($data['rating_err']) && empty($data['sell_err']) && empty($data['buy_err'])) {
         // if (move_uploaded_file($data['image_tmp'],  URLROOT."/public/img/" . $data['img'])) {
         if ($this->UserModel->addBrand($data)) {
-          echo "<script>window.location.href='".URLROOT."/Supplier/brand ';</script>";
-        } 
+          echo "<script>window.location.href='" . URLROOT . "/Supplier/brand ';</script>";
+        }
         // }
       }
     }
   }
- 
+
   public function updateBrand($id)
   {
     if ($this->UserModel->getBrandById($id)) {
@@ -246,7 +258,7 @@ class Supplier extends Controller
       ];
       $this->view('supplier/updateBrand', $data);
     } else {
-      echo "<script>window.location.href='".URLROOT."/Supplier/brand ';</script>";
+      echo "<script>window.location.href='" . URLROOT . "/Supplier/brand ';</script>";
     }
     // $this->view('supplier/updateProduct', $data);
     if (isset($_POST['updateBrand'])) {
@@ -261,7 +273,7 @@ class Supplier extends Controller
         'rating_err' => '',
         'sell_err' => '',
         'buy_err' => '',
-       
+
       ];
 
       // if (empty($data['img'])) {
@@ -271,8 +283,8 @@ class Supplier extends Controller
       if (empty($data['name_err']) && empty($data['rating_err']) && empty($data['sell_err']) && empty($data['buy_err'])) {
         // if (move_uploaded_file($data['image_tmp'],  URLROOT."/public/img/" . $data['img'])) {
         if ($this->UserModel->updateBrand($data)) {
-          echo "<script>window.location.href='".URLROOT."/Supplier/brand';</script>";
-        } 
+          echo "<script>window.location.href='" . URLROOT . "/Supplier/brand';</script>";
+        }
         // }
       }
     }
@@ -301,7 +313,4 @@ class Supplier extends Controller
     ];
     $this->view('Supplier/rapport', $data);
   }
-
-
-
 }

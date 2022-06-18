@@ -4,6 +4,7 @@
 
 // Bar Chart Example
 var ctx = document.getElementById("myBarChart");
+
 var myLineChart = new Chart(ctx, {
   type: 'bar',
   data: {

@@ -11,8 +11,11 @@
     <link rel="icon" type="image/x-icon" href="<?php echo URLROOT ?>/img/image_processing20200412-21268-172ln5q-removebg-preview.png">
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
     <link href="<?php echo URLROOT ?>/css/style.css" rel="stylesheet" />
+
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 </head>
+
+
 
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -140,7 +143,7 @@
                     <div class="row">
                         <div class="col-xl-6">
                             <div class="card mb-4">
-                                
+
                                 <div class="col-lg-6 d-flex">
 
 
@@ -153,7 +156,7 @@
                         </div>
                         <div class="col-xl-6">
                             <div class="card mb-4">
-                               
+
                                 <div class="card-body" style="overflow:scroll;max-height:257px">
                                     <div class="card-header text-white pb-0" style="background-color:#00204a ;">
                                         <h6>Suppliers overview</h6>
@@ -188,7 +191,7 @@
                             </div>
                         </div>
                     </div>
-                   
+
                 </div>
             </main>
 
