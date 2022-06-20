@@ -229,14 +229,13 @@ class Users
 
         return $result;
     }
-    public function OrderCountBySup(){
+    public function OrderCountBySup()
+    {
         $result = $this->db->query('SELECT * FROM commande WHERE idUser=:idUser');
-        $result = $this->db->bind(':idUser', $_SESSION['id']);
+        $result = $this->db->bind(':idUser', $_SESSION['idUser']);
         $result = $this->db->resultSet();
         $result = count($result);
-         return $result;
-
-
+        return $result;
     }
     public function categoryCount()
     {
@@ -286,4 +285,28 @@ class Users
 
         return $result;
     }
+    public function getOrdersbyid($id)
+    {
+        $result = $this->db->query('SELECT * FROM commande JOIN product on product.idProduct= commande.idProduct where idUser=:idUser');
+        $result = $this->db->bind(':idUser', $id);
+        // $result = $this->db->execute();
+        $result = $this->db->resultSet();
+        return $result;
+    }
+    public function addOrder($data)
+    {
+        $result = $this->db->query('INSERT INTO commande( idUser, idProduct, Quantity) VALUES (:idUser , :idProduct , :Quantity  )');
+
+        $result = $this->db->bind(':idUser', $data['idUser']);
+        $result = $this->db->bind(':idProduct', $data['idProduct']);
+        $result = $this->db->bind(':Quantity', $data['Quantity']);
+        $result = $this->db->execute();
+        return $result;
+    }
+    public function getProductWithbrand()
+    {
+        $result = $this->db->query('SELECT product.idProduct , product.Price, product.img, product.Name, brand.Name as brandName, Quantity, Description FROM product JOIN brand ON product.idBrand=brand.idBrand');
+        $result = $this->db->resultSet();
+        return $result;
+    }   
 }
