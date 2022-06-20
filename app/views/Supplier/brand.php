@@ -127,7 +127,7 @@
                                     <tbody>
                                         <tr>
                                             <td><?php echo $brand->idBrand; ?></td>
-                                            <td><?php echo $brand->idUser; ?></td>
+                                           
                                             <td><?php echo $brand->Name; ?></td>
                                             <td><?php echo $brand->Rating; ?></td>
                                             <td><?php echo $brand->sells; ?></td>

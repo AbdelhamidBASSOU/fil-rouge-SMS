@@ -46,7 +46,7 @@
                             
                                            
                                         
-                                            <a class="nav-link" href="Order.html">Orders</a>
+                                            <a class="nav-link" href="orderl">Orders</a>
 
 
                                         
@@ -57,11 +57,11 @@
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
-                        <div class="small">Logged in as:</div>
-                        <?php echo($_SESSION['Role']); ?>
-                    </div>
+                    <div class="small">Logged in as:</div>
+                    <?php echo ($_SESSION['Role']); ?>
+                </div>
                 </nav>
-            </div>
+            
             <div id="layoutSidenav_content">
                 <div class="col-xl-6 h-100 p-4">
                     
@@ -69,7 +69,7 @@
 
                  </div>
                     </div>
-                </div>
+                
                 
          
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
