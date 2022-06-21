@@ -107,7 +107,7 @@
                                     <thead>
                                         <tr>
                                             <th>idOrder</th>
-                                            <th>idUser</th>
+                                          
                                             <th>idProduct</th>
                                             <th>Details</th>
                                             <th>Quantity</th>
@@ -119,7 +119,7 @@
                                     <tbody>
                                         <tr>
                                         <td><?php echo $order->idOrder; ?></td>
-                                        <td><?php echo $order->idUser; ?></td>
+                                       
                                         <td><?php echo $order->idProduct; ?></td>
                                         <td><?php echo $order->idOrder; ?></td>
                                         <td><?php echo $order->Quantity; ?></td>

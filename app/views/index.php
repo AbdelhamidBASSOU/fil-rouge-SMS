@@ -12,7 +12,7 @@
     <meta name="author" content="" />
     <title><?php $data['title'] ?></title>
     <link href="<?php echo URLROOT ?>/css/style.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 
@@ -30,27 +30,23 @@
                                 <div class="card-body">
                                     <form method="post" class="needs-validation" novalidate>
                                         <div class=" form-floating mb-3">
-                                            <input name="Email" class="form-control" id="inputEmail" type="email" placeholder="name@example.com" />
+                                            <input name="email" class="form-control" id="email" type="email" placeholder="name@example.com" />
                                             <label for="inputEmail">Email address</label>
-                                            <div class="invalid-feedback">
-                                                please enter name of Fournisseur
+                                            <div id="email_error">
+
                                             </div>
                                         </div>
 
                                         <div class="form-floating mb-3">
-                                            <input name="Password" class="form-control" id="inputPassword" type="password" placeholder="Password" />
+                                            <input name="password" class="form-control" id="password" type="password" placeholder="Password" />
                                             <label for="inputPassword">Password</label>
-                                            <div class="invalid-feedback">
-                                                please enter name of Fournisseur
+                                            <div id="password_error">
+
                                             </div>
-                                        </div>
-                                        <div class="form-check mb-3">
-                                            <input class="form-check-input" id="inputRememberPassword" type="checkbox" value="" />
-                                            <label class="form-check-label" for="inputRememberPassword">Remember Password</label>
                                         </div>
                                         <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
                                             <a class="small" href="password.html">Forgot Password?</a>
-                                            <button class="btn text-white" style="background-color:#005792!important;" name="submit" type="submit">Login</button>
+                                            <button class="btn text-white" style="background-color:#005792!important;" id="submit" name="submit" type="submit">Login</button>
                                         </div>
                                     </form>
                                 </div>
@@ -65,7 +61,7 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-    <script src="js/scripts.js"></script>
+    <script src="<?php echo URLROOT ?>/js/script.js"></script>
 </body>
 
 </html>

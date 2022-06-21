@@ -287,10 +287,12 @@ class Users
     }
     public function getOrdersbyid($id)
     {
-        $result = $this->db->query('SELECT * FROM commande JOIN product on product.idProduct= commande.idProduct where idUser=:idUser');
+        $result = $this->db->query('SELECT commande.idOrder, product.Name , commande.Quantity, commande.Status FROM commande JOIN product on product.idProduct= commande.idProduct where idUser=:idUser');
         $result = $this->db->bind(':idUser', $id);
         // $result = $this->db->execute();
         $result = $this->db->resultSet();
+
+
         return $result;
     }
     public function addOrder($data)
@@ -308,5 +310,5 @@ class Users
         $result = $this->db->query('SELECT product.idProduct , product.Price, product.img, product.Name, brand.Name as brandName, Quantity, Description FROM product JOIN brand ON product.idBrand=brand.idBrand');
         $result = $this->db->resultSet();
         return $result;
-    }   
+    }
 }

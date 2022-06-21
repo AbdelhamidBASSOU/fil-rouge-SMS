@@ -19,8 +19,8 @@ class Login extends Controller
 
       $data = [
 
-        'Email' => trim($_POST['Email']),
-        'Password' => trim($_POST['Password']),
+        'Email' => trim($_POST['email']),
+        'Password' => trim($_POST['password']),
         'Email_err' => '',
         'Password_err' => '',
 
